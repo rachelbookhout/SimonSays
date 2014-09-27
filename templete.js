@@ -4,7 +4,9 @@ function drawRect(x, y, w, h, color) {
 
   ctx.fillRect(x, y, w, h);
 }
-function drawTri1(){
+
+var blueSquare = {
+ draw: function (){
   ctx.beginPath();
   ctx.moveTo(X_MID,Y_MID);
   ctx.lineTo(X_MID - 100,Y_MID+100);
@@ -13,7 +15,11 @@ function drawTri1(){
   ctx.fillStyle = "rgb(0, 50, 200)"
   ctx.fill();
 }
-function drawTri2(){
+}
+
+
+ var yellowSquare = {
+  draw: function(){
   ctx.beginPath();
   ctx.moveTo(X_MID,Y_MID);
   ctx.lineTo(X_MID + 100, Y_MID -100);
@@ -22,8 +28,11 @@ function drawTri2(){
   ctx.fillStyle = "rgb(255, 255, 0)"
   ctx.fill();
 }
-function drawTri3(){
- ctx.beginPath();
+}
+
+var greenSquare = {
+  draw: function(){
+  ctx.beginPath();
   ctx.moveTo(X_MID + 200,Y_MID);
   ctx.lineTo(X_MID + 300, Y_MID + 100);
   ctx.lineTo(X_MID + 200 ,Y_MID + 200);
@@ -31,30 +40,20 @@ function drawTri3(){
   ctx.fillStyle = "rgb(0, 255, 7)"
   ctx.fill();
 }
-function drawTri4(){
-ctx.beginPath();
+}
+
+ var redSquare ={
+  draw:function(){
+  ctx.beginPath();
   ctx.moveTo(X_MID + 200,Y_MID + 200);
   ctx.lineTo(X_MID +100, Y_MID + 300);
   ctx.lineTo(X_MID , Y_MID  +200);
   ctx.strokeStyle = "rgb(215, 40, 40)"
   ctx.fillStyle = "rgb(215, 40, 40)"
   ctx.fill();
-
+}
 }
 
-
-
-
-// function drawDi(){
-//   ctx.beginPath();
-//   ctx.moveTo(75,0);
-//   ctx.lineTo(150,100);
-//   ctx.lineTo(75,200);
-//   ctx.lineTo(0,100);
-//   ctx.strokeStyle = "rgb(0,200,50)"
-//   ctx.fillStyle = "rgb(0,200,50)"
-//   ctx.fill();
-// }
 
 
 // function drawCircle(x, y, radius, color) {
@@ -96,11 +95,10 @@ function draw() {
   // Can use `drawRect` and `drawCircle` function.
   // e.g. draw the ball colored green
   drawRect(X_MID, Y_MID, 200,200, 'grey');
-  drawTri1();
-  drawTri2();
-  drawTri3();
-  drawTri4();
-
+  blueSquare.draw();
+  redSquare.draw();
+  greenSquare.draw();
+  yellowSquare.draw();
 }
 
 // function tick() {
